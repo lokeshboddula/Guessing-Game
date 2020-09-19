@@ -27,13 +27,14 @@
         <div class="w-100 m-2"></div>
         <form> 
         <div class="col">
-        <input class="form-control" type="number" style="display: none;" id="input">
+        <input class="form-control" type="text" style="display: none;" id="input">
         </div>
 
         <div class="w-100 m-2"></div>
 
         <div class="col-3">
-        <button type="button" class="btn btn-primary mt-2 ml-5" style="visibility: hidden;" id="check-button">check!</button>
+        <button type="button" class="btn btn-primary mt-2 ml-5" value="number" style="visibility: hidden;" id="check">check!</button>
+        <p id="result"></p>
          </div>
          </div>
        </form>
@@ -44,34 +45,38 @@
 
 <script>
  
- document.getElementById('start-button').addEventListener("click",buttonAction);
-
- function buttonAction() {
-    var btn = document.getElementById('start-button');
+  document.getElementById("start-button").addEventListener("click",startAction);
+  var randomNumber = Math.floor(Math.random() * 100 + 1);
+    alert(randomNumber);
+    function startAction() {
+    var btn = document.getElementById("start-button");
     btn.remove();
-
-    var randomNumber = Math.floor(Math.random() * 101);
-
+    
     document.getElementById('hi').innerHTML = 'Hi, Am a Number!, guess my Value!!';
-    document.getElementById('hint').innerHTML = 'Hint : my value is in between 1 to 100!'
-    document.getElementById('below').innerHTML = 'Start guessing below!'
+    document.getElementById('hint').innerHTML = 'Hint : my value is in between 1 to 100!';
+    document.getElementById('below').innerHTML = 'Start guessing below!';
 
     var input = document.getElementById('input');
     input.style.display = "block";
 
-    var btnVisibility = document.getElementById('check-button');
+    var btnVisibility = document.getElementById('check');
     btnVisibility.style.visibility = "visible";
-
- }
-
-
-
-
-
-
-
-
-
+   }
+   
+   document.getElementById("check").addEventListener("click",checkAction);
+   function  checkAction() {
+   var aNumber = getElementById("input").value;
+   var guessedNumber = parseInt(aNumber);
+       if(guessedNumber > randomNumber ) {
+       alert("bit lesser!");
+       }
+       else if( guessedNumber < randomNumber) {
+         alert(" bit higher");
+       }
+       else{
+         alert("you won");
+       }
+    }
 
 </script>
 
