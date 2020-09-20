@@ -7,7 +7,7 @@
     document.getElementById('hint').innerHTML = 'Hint : my value is in between 1 to 100!';
     document.getElementById('below').innerHTML = 'Start guessing below!';
 
-    var input = document.getElementById('inputNumber');
+   var input = document.getElementById('inputNumber');
     input.style.display = "block";
 
     var btnVisibility = document.getElementById('check-button');
