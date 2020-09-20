@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guessing Game!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
+
 </head>
 <body>
    <div class="container" id="div">
@@ -34,57 +35,10 @@
         </div>      
         <div class="w-100"></div>
         <div class="col-md-4 p-5">
-        <p id="result"></p>
+        <h5 id="result"></h5>
         </div>
       </div>
      </div>
-
-<script>
-  document.getElementById("start-button").addEventListener("click",startAction);
-  var randomNumber = Math.floor(Math.random() * 100 + 1);
-    function startAction() {
-    var btn = document.getElementById("start-button");
-    btn.remove();
-    
-    document.getElementById('hi').innerHTML = 'Hi, Am a Number!, guess my Value!!';
-    document.getElementById('hint').innerHTML = 'Hint : my value is in between 1 to 100!';
-    document.getElementById('below').innerHTML = 'Start guessing below!';
-
-    var input = document.getElementById('inputNumber');
-    input.style.display = "block";
-
-    var btnVisibility = document.getElementById('check-button');
-    btnVisibility.style.visibility = "visible";
-   };
-   
-   document.getElementById("check-button").addEventListener("click",checkAction);
-   function  checkAction() {
-   var aNumber = document.getElementById("inputNumber").value;
-   var guessedNumber = parseInt(aNumber);
-    do {
-       var count = 0; 
-       if(guessedNumber < randomNumber) {
-        document.getElementById("result").innerHTML = 'my value is bit high, guess again!';
-        count++;
-       }
-       else if( guessedNumber > randomNumber) {
-        document.getElementById("result").innerHTML = 'my value is bit low, guess again!';
-       count++;
-       }
-       else if (guessedNumber == randomNumber) {
-        document.getElementById("result").innerHTML = 'Awesome!, you guessed it!!';
-       }
-       else if (count == 10 && guessNumber != randomNumber) {
-         break;
-         document.getElementById("result").innerHTML = 'sorry, you lost!, my value is' + randomNumber;
-       }
-   }
-   while (count != 10 && guessedNumber != randomNumber);
-}
-</script>
-
-
-
-
+  <script src="main.js"></script>
 </body>
 </html>
