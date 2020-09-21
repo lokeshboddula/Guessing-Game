@@ -22,8 +22,8 @@
    else if (guessedNumber < randomNumber  && count > 1) {
     count = count - 1;
     var node = document.createElement("li");
-    node.className = 'list-group-item mr-4';
-    var textnode = document.createTextNode(`your guess :${guessedNumber} is bit less, try again!`);
+    node.className = 'list-group-item';
+    var textnode = document.createTextNode(`your guess : ${guessedNumber} is bit less, try again!`);
     node.appendChild(textnode);
     document.getElementById("myList").appendChild(node);
    }
