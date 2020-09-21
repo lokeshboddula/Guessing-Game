@@ -19,7 +19,7 @@
      var textnode = document.createTextNode(`your guess : ${guessedNumber} is bit high, try again!`);
      node.appendChild(textnode);
      document.getElementById("myList").appendChild(node);
-     document.getElementById('span').innerHTML = count;
+     document.getElementById('span').innerHTML = Math.min(Math.max(parseInt(count), 0), 10);
    }
    else if (guessedNumber < randomNumber  && count > 1) {
     count = count - 1;
@@ -28,7 +28,7 @@
     var textnode = document.createTextNode(`your guess : ${guessedNumber} is bit less, try again!`);
     node.appendChild(textnode);
     document.getElementById("myList").appendChild(node);
-    document.getElementById('span').innerHTML = count;
+    document.getElementById('span').innerHTML = Math.min(Math.max(parseInt(count), 0), 10);
 
    }
 
@@ -36,13 +36,13 @@
     count = count - 1;
     document.getElementById("result").innerHTML = ` you guessed it right!, I'm ${randomNumber}!!
     you guessed me in ${10 - count} guesses!`;
-    document.getElementById('span').innerHTML = count;
+    document.getElementById('span').innerHTML = Math.min(Math.max(parseInt(count), 0), 10);
    }
 
    else {
     document.getElementById("result").innerHTML = " You failed to guess!, I'm " + randomNumber + " !!";
     count = count - 1;
-    document.getElementById('span').innerHTML = count;
+    document.getElementById('span').innerHTML = Math.min(Math.max(parseInt(count), 0), 10);
 
     }
    };
