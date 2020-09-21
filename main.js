@@ -33,8 +33,10 @@
    }
 
    else if (guessedNumber == randomNumber && count > 0) {
+    count = count - 1;
     document.getElementById("result").innerHTML = ` you guessed it right!, I'm ${randomNumber}!!
     you guessed me in ${10 - count} guesses!`;
+    document.getElementById('span').innerHTML = count;
    }
 
    else {
