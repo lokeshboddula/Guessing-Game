@@ -34,7 +34,7 @@
 
    else if (guessedNumber == randomNumber && count > 0) {
     document.getElementById("result").innerHTML = ` you guessed it right!, I'm ${randomNumber}!!
-    you guessed me in ${11 - count} guesses!`;
+    you guessed me in ${10 - count} guesses!`;
    }
 
    else {
