@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  var randomNumber = Math.floor(Math.random() * 100 + 1);
     document.getElementById("start-button").addEventListener("click",startAction);
     function startAction() {
@@ -46,3 +47,6 @@
 
     }
    };
+=======
+/* nothing here  */
+>>>>>>> b2
