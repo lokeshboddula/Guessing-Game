@@ -8,103 +8,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 </head>
 <body>
-  <div className="container" id="root"></div>
-  <script src="main.js"></script>
-  <script type="text/babel">
-  const randomNumber = Math.floor(Math.random() * 101);
-
-
-
-
-
-
-
-
-
-
-
-
-  class GameForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-     this.setState({value: event.target.value});
-     
-  }
-  
-  handleSubmit(event) {
-    let guessedNumber = this.state.value;
-    if (guessedNumber == randomNumber) {
-      alert('y')
-      
-    }
-    else if ( guessedNumber < randomNumber) {
-      alert('you no ' + guessedNumber + ' bit low')
-    }
-    else if ( guessedNumber > randomNumber)
-    {
-      alert('new')
-    }
-    else {
-      alert ("high")
-    }
-    event.preventDefault();
-  }
-  render() {
-    return (
-      <div className="container text-center">   
-      <div className="display-4 p-3">A Number Guessing Game!</div>
-      <div id="game">
-      <div className="h3 pt-2">
+   <div class="container text-center">
+    <div class="display-4 p-3">A Number Guessing Game!</div>
+    <div id="game" style="display: none;">
+      <div class="h3 pt-2">
         <h3>Hi, Am a Number!, guess my Value!!</h3>
       </div>
-      <div className="text-muted">
+      <div class="text-muted">
         <p>Hint : my value is in between 1 to 100!</p>
       </div>
       <div>
-        <h4 className="h4 p-4">Start guessing below!</h4>
+        <h4 class="h4 p-4">Start guessing below!</h4>
       </div>
-      <div className="row justify-content-center">
-        <div className="col-md-2 col-sm-6">
-         <form className="form-group"  onSubmit={this.handleSubmit}>
-         
-             <input type="Number" value={this.state.value}  onChange={this.handleChange} className = "form-control" />
-        
-             <input className="btn btn-primary p-1 m-2" type="submit" value="check"/>
-          </form>
-      <small>guesses left : {}</small>
-      <h5 id="result"></h5>
-    </div>
-    </div>
-      <div className="col-md-4 col-sm-7">
-       <ul className="list-group" id="myList"></ul>
-       </div>
+      <div class="row justify-content-center">
+        <div class="col-md-2 col-sm-6">
+      <input class="form-control" type="number" id="inputNumber">
+      <button type="button" class="btn btn-primary btn-block mt-2 mb-3" value="number" id="check-button">Check</button>
+        <small>guesses left : <span id="span"></span></small>
+       <h5 id="result"></h5>
         </div>
         <div class="w-100"></div>
-        <div>
-        <button className="btn btn-danger btn-lg" id="start-button" >START!</button>
+        <div class="col-md-4 col-sm-7">
+       <ul class="list-group" id="myList"></ul>
        </div>
-        </div>    
-      
-    );
-  }
-}
-
-
-
- ReactDOM.render(<GameForm />,document.getElementById('root'));
-   
-  </script>
+       </div>
+      </div>
+     <button class="btn btn-danger btn-lg" id="start-button">START!</button>
+    </div>
+   </div>
+  <script src="main.js"></script>
 </body>
 </html>
